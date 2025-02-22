@@ -1,9 +1,6 @@
-import * as React from "react";
-// import Image from "next/image";
-
-import { Section, Container } from "@/components/craft";
 import CardDepoimentos from "./depoimentos_card";
 
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -12,77 +9,55 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// import FileImage from "../public/file.svg";
-// import GlobeImage from "../public/globe.svg";
-// import NextImage from "../public/file.svg";
-// const photos = [
-//   {
-//     src: FileImage,
-//   },
-//   {
-//     src: GlobeImage,
-//   },
-//   {
-//     src: NextImage,
-//   },
-// ];
-
 const Depoimentos = () => {
-  return (
-    <Section>
-      <Container>
-        <h2 className="!mt-0 mb-4">
-          Confira os depoimentos dos nossos clientes
-        </h2>
+  const depoimentos = [
+    {
+      nome: "João Silva",
+      texto: "Ótimo atendimento!",
+    },
+    {
+      nome: "Maria Souza",
+      texto: "Experiência incrível!",
+    },
+    {
+      nome: "João Silva",
+      texto: "Ótimo atendimento!",
+    },
+    {
+      nome: "Maria Souza",
+      texto: "Experiência incrível!",
+    },
+    {
+      nome: "João Silva",
+      texto: "Ótimo atendimento!",
+    },
+    {
+      nome: "Maria Souza",
+      texto: "Experiência incrível!",
+    },
+  ];
 
-        <Carousel className="mt-6 w-full flex text-center flex justify-between gap-6 rounded-lg">
-          <CarouselContent className="-ml-1">
-            <div className="flex gap-4">
-              <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3 mx-2">
-                <CardDepoimentos nome="Josefa" depoimento="Muito bao, top" />
-              </CarouselItem>
-            </div>
-            <div className="flex gap-4">
-              <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3 mx-2">
-                <CardDepoimentos nome="Filezitis" depoimento="Muito bao, top" />
-              </CarouselItem>
-            </div>
-            <div className="flex gap-4">
-              <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3 mx-2">
-                <CardDepoimentos nome="Ronisley" depoimento="Muito bao, top" />
-              </CarouselItem>
-            </div>
-            <div className="flex gap-4">
-              <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3 mx-2">
-                <CardDepoimentos nome="Henzo" depoimento="Muito bao, top" />
-              </CarouselItem>
-            </div>
-            <div className="flex gap-4">
-              <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3 mx-2">
-                <CardDepoimentos nome="Josefa" depoimento="Muito bao, top" />
-              </CarouselItem>
-            </div>
-            <div className="flex gap-4">
-              <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3 mx-2">
-                <CardDepoimentos nome="Filezitis" depoimento="Muito bao, top" />
-              </CarouselItem>
-            </div>
-            <div className="flex gap-4">
-              <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3 mx-2">
-                <CardDepoimentos nome="Ronisley" depoimento="Muito bao, top" />
-              </CarouselItem>
-            </div>
-            <div className="flex gap-4">
-              <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3 mx-2">
-                <CardDepoimentos nome="Henzo" depoimento="Muito bao, top" />
-              </CarouselItem>
-            </div>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </Container>
-    </Section>
+  return (
+    <section id="depoimentos" className="py-12 text-center">
+      <h2 className="text-3xl font-bold mb-6">O que nossos clientes dizem</h2>
+      <Carousel opts={{ align: "start", loop: true }}>
+        <CarouselContent className="gap-4">
+          {depoimentos.map((depoimento, index) => (
+            <CarouselItem
+              key={index}
+              className="md:basis-1/3 sm:basis-1/2 basis-full"
+            >
+              <CardDepoimentos
+                nome={depoimento.nome}
+                depoimento={depoimento.texto}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </section>
   );
 };
 

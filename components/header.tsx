@@ -1,19 +1,35 @@
-// Third-party library imports
-import Balancer from "react-wrap-balancer";
-
-// Local component imports
+import Link from "next/link";
 import { Container, Section } from "./craft";
 
 const Header = () => {
   return (
-    <Section className="border-b">
-      <Container className="flex flex-col text-center">
-        <h1 className="!mb-0">@estudiodeodontologia</h1>
-        <h3 className="text-muted-foreground">
-          <Balancer>
-            Qualidade total para você!
-          </Balancer>
-        </h3>
+    <Section className="border-b bg-white shadow-md sticky top-0 z-50">
+      <Container className="flex justify-between items-center py-4">
+        <h1 className="text-2xl font-bold">@estudiodeodontologia</h1>
+        <nav>
+          <ul className="flex space-x-6">
+            <li>
+              <a href="#sobre" className="hover:text-blue-500">
+                Sobre
+              </a>
+            </li>
+            <li>
+              <a href="#servicos" className="hover:text-blue-500">
+                Serviços
+              </a>
+            </li>
+            <li>
+              <a href="#depoimentos" className="hover:text-blue-500">
+                Depoimentos
+              </a>
+            </li>
+            <li>
+              <a href="#contato" className="hover:text-blue-500">
+                Contato
+              </a>
+            </li>
+          </ul>
+        </nav>
       </Container>
     </Section>
   );

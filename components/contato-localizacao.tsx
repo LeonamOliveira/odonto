@@ -23,41 +23,35 @@ const featureText: FeatureText[] = [
   {
     icon: <Coins className="h-6 w-6" />,
     title: "Localização",
-    href: "/",
-    description:
-      "Venha nos visitar",
+    href: "https://maps.app.goo.gl/krmzYbMdXBiPnZuz9",
+    description: "Venha nos visitar",
     cta: "Link da Localização",
   },
   {
     icon: <Coins className="h-6 w-6" />,
     title: "Entre em Contato Conosco",
-    href: "/",
-    description:
-      "Fale Conosco pelo nosso WhatsApp.",
+    href: "https://api.whatsapp.com/send?phone=5562998669824&text=Ol%C3%A1,%20vi%20sua%20landing%20page%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.",
+    description: "Fale Conosco pelo nosso WhatsApp.",
     cta: "WhatsApp",
   },
 ];
 
 const ContatoLocalizacao = () => {
   return (
-    <Section className="border-b">
+    <Section id="contato" className="border-b">
       <Container className="not-prose">
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">
-            <Balancer>
-              Venha nos fazer uma visita
-            </Balancer>
+            <Balancer>Venha nos fazer uma visita</Balancer>
           </h3>
           <h4 className="text-2xl font-light opacity-70">
-            <Balancer>
-              Estamos em promoção
-            </Balancer>
+            <Balancer>Estamos em promoção</Balancer>
           </h4>
 
           <div className="mt-6 grid gap-6 md:mt-12 md:grid-cols-2">
             {featureText.map(
               ({ icon, title, description, href, cta }, index) => (
-                <Link
+                <Link target="_blank"
                   href={`${href}`}
                   className="flex flex-col justify-between gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2"
                   key={index}
@@ -73,7 +67,7 @@ const ContatoLocalizacao = () => {
                     </div>
                   )}
                 </Link>
-              ),
+              )
             )}
           </div>
         </div>
