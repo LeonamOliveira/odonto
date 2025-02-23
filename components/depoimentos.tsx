@@ -1,6 +1,5 @@
 import CardDepoimentos from "./depoimentos_card";
 
-import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
